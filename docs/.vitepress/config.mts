@@ -18,6 +18,7 @@ export default defineConfig({
               text: 'Deployment & Environment',
               items: [
                 { text: 'Diffusion Strategy', link: '/deployment/diffusion_strategy'},
+                { text: 'Contribution Channels', link: '/deployment/contribution_channels' },
                 { text: 'Binary Types', link: '/deployment/binary' }
               ]
             },
@@ -89,6 +90,7 @@ export default defineConfig({
               text: 'Déploiement & Environnement',
               items: [
                 { text: 'Stratégie de diffusion', link: '/fr/deployment/diffusion_strategy'},
+                { text: 'Canaux de contribution', link: '/fr/deployment/contribution_channels' },
                 { text: 'Types de binaires', link: '/fr/deployment/binary' }
               ]
             },
