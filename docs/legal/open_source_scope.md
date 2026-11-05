@@ -10,7 +10,7 @@ documentation deployment, a new asset, or a change of visibility of a repository
 ## 1. Summary
 
 Shimera opens **two things**: the whole `Shimera` repository and the public
-documentation (`ShimeraDocs/public`). Everything else stays private.
+documentation (`ShimeraTeam/Docs`). Everything else stays private.
 
 | Element | Status | License | Where |
 |---|---|---|---|
@@ -21,8 +21,8 @@ documentation (`ShimeraDocs/public`). Everything else stays private.
 | Build scripts (`xmake.lua`, `.run/`) | **Open** | `GPL-3.0-only` | `ShimeraTeam/Shimera` |
 | Governance files (`LICENSE`, `AUTHORS.md`, `CONTRIBUTING.md`, `README.md`) | **Open** | n/a (project metadata) | `ShimeraTeam/Shimera` |
 | Release binaries (`.a`, `.so`, headers) | **Open** | `GPL-3.0-only` | GitHub Releases |
-| User and developer documentation (`userdoc/`, `devdoc/`) | **Open** | To decide (see 3.3) | `ShimeraDocs/public`, GitHub Pages |
-| Internal documentation (this site) | **Private** | All rights reserved | `ShimeraDocs/private` |
+| User and contributor documentation (`user/`, `contributor/`) | **Open** | `CC-BY-4.0` (see 3.3) | `ShimeraTeam/Docs`, GitHub Pages |
+| Internal documentation (this site) | **Private** | All rights reserved | `ShimeraTeam/PrivateDocs` |
 | e-Soleau deposit, action plan PDF, school deliverables | **Private** | All rights reserved | Maintainers only |
 | The "Shimera" name and logo | **Not licensed** | Not covered by the GPL | Brand assets |
 | CI secrets, runner configuration, credentials | **Private** | n/a | GitHub settings |
@@ -73,16 +73,17 @@ are distributions of a GPL work. Each archive **must** contain:
 Publishing the source on the same GitHub project, at the tag matching the
 binary, satisfies the GPL source-availability requirement (GPL-3.0 section 6).
 
-### 2.3 Public documentation (`ShimeraDocs/public`)
+### 2.3 Public documentation (`ShimeraTeam/Docs`)
 
-The user documentation (`userdoc/`) and developer documentation (`devdoc/`) are
-built and deployed to GitHub Pages by the `Documentation` workflow, which only
-builds `public/`. They are open because users need them to adopt the library,
-and contributors need them to follow the contribution flow referenced by
-`CONTRIBUTING.md` (code standards, git workflow, testing guide).
+The user documentation (`user/`) and contributor documentation (`contributor/`)
+live in their own repository, `ShimeraTeam/Docs`, and are built and deployed to
+GitHub Pages by its `Documentation` workflow. They are open because users need
+them to adopt the library, and contributors need them to follow the contribution
+flow referenced by `CONTRIBUTING.md` (code standards, git workflow, testing guide).
 
 Opening the documentation means opening its **sources** too, not only the
-rendered website. See section 4 for the repository split this requires.
+rendered website. This is why the public documentation was split from this
+private repository (see section 4).
 
 ## 3. Licensing choices per element
 
@@ -121,11 +122,53 @@ Examples are GPL like the rest of the repository. This is consistent: any progra
 built on Shimera and distributed is already bound by the GPL, so a more permissive
 license on the examples alone would not give users more freedom.
 
-### 3.3 Public documentation: decision needed
+### 3.3 Public documentation: `CC-BY-4.0`
 
-`ShimeraDocs` currently has **no license file**. By default, unlicensed content is
-"all rights reserved": people can read it but not legally reuse, translate or
-fix it.
+The public documentation (`ShimeraTeam/Docs`) is licensed under the **Creative
+Commons Attribution 4.0 International** license. Without a license it would have
+been "all rights reserved": people could read it but not legally reuse, translate
+or fix it.
+
+**What CC BY 4.0 allows:** anyone may share and adapt the documentation, for any
+purpose, including commercially, as long as they credit The Shimera Authors, link
+to the license and indicate their changes. It is a permissive license: an adapted
+version may be published under another license.
+
+**Why CC BY 4.0 and not the GPL or CC BY-SA:**
+
+- The GPL is written for software (source code, object code) and fits a
+  documentation website poorly. The GFDL is heavy, rarely used, and allows
+  invariant sections.
+- The project's value, and what the copyleft protects, is the code and the
+  shaders. The public documentation contains **no shader source**, only usage
+  examples of the public API, so a permissive license opens no gap.
+- CC BY keeps every future path open (GPL + commercial dual license, or MPL-2.0):
+  commercial licensees can use the documentation, and a future commercial
+  documentation can reuse it without any constraint. CC BY-SA would have forced
+  any adapted documentation, including contributions by external authors, to stay
+  under CC BY-SA.
+- A permissive license makes translations, tutorials and blog posts easier, while
+  keeping the authors credited.
+
+**How it is applied in `ShimeraTeam/Docs`:**
+
+- `LICENSE`: the full, official CC BY 4.0 legal code.
+- `README.md`: the license notice, the expected credit line, and what is excluded
+  (the library code under `GPL-3.0-only`, the name and logo).
+- A notice at the bottom of every page of the website (custom VitePress theme,
+  `doc-footer-before` slot), in English and French.
+- `CONTRIBUTING.md`: the same contribution grant as the library repository,
+  including the right for the maintainers to relicense contributions.
+
+**Code examples** in the documentation are covered by CC BY 4.0 as well. Copying
+a short usage snippet such as `fx.add<shimera::Distortion>()` raises no practical
+issue, since a program using it is bound by the library's GPL anyway. If the
+documentation ever includes longer, reusable code, consider placing the code
+blocks under a no-attribution license such as `MIT-0`.
+
+**Images:** only images created by the team (captures of Shimera examples) may be
+added. A capture that shows a third-party texture or picture must be replaced, or
+its own license must be checked and stated next to it.
 
 ### 3.4 Name and logo: not licensed
 
@@ -140,19 +183,17 @@ next to it that it is excluded from the documentation license.
 
 | Element | Why it stays private |
 |---|---|
-| `ShimeraDocs/private` (this site) | Internal strategy: legal protection, security map (our own attack surface), POCs, action plan, technology watch. |
+| `ShimeraTeam/PrivateDocs` (this site) | Internal strategy: legal protection, security map (our own attack surface), POCs, action plan, technology watch. |
 | e-Soleau archive and receipt | Proof of anteriority: its value comes from being sealed and kept by us. Only its existence and date are mentioned. |
 | `plan_d_action_shimera.pdf` and school deliverables | Internal planning documents, not useful to users. |
 | CI secrets, tokens, self-hosted runner setup | Security. Never in any repository, public or private. |
 | Commercial terms (future dual license) | Business information, to be written only if dual licensing is activated. |
 
-::: warning Private and public docs share one repository
-`private/` and `public/` are two folders of the **same** `ShimeraDocs` Git
-repository. The deployment only publishes `public/`, but making the repository
-public would expose `private/` **and its whole Git history**. To open the
-documentation sources, move `public/` (with the `Documentation` workflow) into
-its own public repository and keep `ShimeraDocs` private. Also note that GitHub
-Pages on a private repository requires a paid GitHub plan.
+::: warning Keep the two documentation repositories separate
+The public documentation lives in `ShimeraTeam/Docs` and the internal one in
+`ShimeraTeam/PrivateDocs`. Never move or copy a page from `PrivateDocs` into
+`Docs`: once pushed to a public repository, it stays in the Git history even if
+deleted later. `PrivateDocs` must stay private.
 :::
 
 ## 5. Third-party components
@@ -193,7 +234,8 @@ Before each release or documentation deployment:
 - [ ] `AUTHORS.md` lists every contributor whose work is merged.
 - [ ] No third-party code or shader with an incompatible or unknown license (section 5).
 - [ ] No secret, token, internal document, or e-Soleau material in the public tree or its history.
-- [ ] Nothing from `ShimeraDocs/private`copied into a public repository.
+- [ ] Nothing from `ShimeraTeam/PrivateDocs` copied into a public repository.
+- [ ] `ShimeraTeam/Docs` still has its `LICENSE` (CC BY 4.0) and every new image in it was created by the team.
 - [ ] The release tag matches the published binaries (source availability).
 
 ## Conclusion

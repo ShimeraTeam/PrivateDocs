@@ -196,7 +196,6 @@ The GPL covers the **code**, not the **name**. "Shimera" is a distinct asset:
 - [ ] Add the SPDX license header to every source file of the library.
 - [ ] Ship `LICENSE` and `AUTHORS.md` in every release archive (missing in `v0.3.6`).
 - [ ] Sign a written relicensing agreement between the three maintainers.
-- [ ] Choose a license for the public documentation and split it from the private docs repository.
 - [ ] Decide whether to register "Shimera" as a trademark with the INPI.
 
 ## Conclusion
