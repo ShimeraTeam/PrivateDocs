@@ -206,7 +206,7 @@ La GPL couvre le **code**, pas le **nom**. « Shimera » est un actif distinct :
 - [ ] Ajouter l'en-tête de licence SPDX à chaque fichier source de la librairie.
 - [ ] Livrer `LICENSE` et `AUTHORS.md` dans chaque archive de release (absents de `v0.3.6`).
 - [ ] Signer un accord écrit de relicenciement entre les trois mainteneurs.
-- [ ] Choisir une licence pour la documentation publique et la séparer du dépôt des docs privées.
+- [x] Choisir une licence pour la documentation publique et la séparer du dépôt des docs privées (`CC-BY-4.0`, dans `ShimeraTeam/Docs`, voir le [Périmètre open source](/fr/legal/open_source_scope), section 3.3).
 - [ ] Décider s'il faut déposer « Shimera » comme marque auprès de l'INPI.
 
 ## Conclusion
