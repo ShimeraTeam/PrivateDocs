@@ -22,7 +22,7 @@ This agreement sets out how the Maintainers make Re-licensing Decisions about th
 
 ## Article 2 - Definitions
 
-- **Project**: the Shimera library and everything distributed with it under the same license (source code, shaders, tests, examples, documentation).
+- **Project**: the Shimera library and everything distributed with it (source code, shaders, tests, examples, documentation).
 - **Maintainers**: the Parties to this agreement, and any person who later joins it under Article 7.
 - **Contributors**: any person other than a Maintainer who contributes to the Project under the terms of `CONTRIBUTING.md`.
 - **Re-licensing Decision**: any decision to:

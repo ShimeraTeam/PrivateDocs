@@ -22,7 +22,7 @@ Le présent accord définit comment les Mainteneurs prennent les Décisions de r
 
 ## Article 2 - Définitions
 
-- **Projet** : la librairie Shimera et tout ce qui est distribué avec elle sous la même licence (code source, shaders, tests, exemples, documentation).
+- **Projet** : la librairie Shimera et tout ce qui est distribué avec elle (code source, shaders, tests, exemples, documentation).
 - **Mainteneurs** : les Parties au présent accord, ainsi que toute personne qui y adhère par la suite selon l'article 7.
 - **Contributeurs** : toute personne autre qu'un Mainteneur qui contribue au Projet selon les conditions de `CONTRIBUTING.md`.
 - **Décision de relicenciement** : toute décision visant à :
