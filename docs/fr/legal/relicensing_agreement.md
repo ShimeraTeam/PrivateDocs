@@ -83,8 +83,8 @@ Fait en autant d'exemplaires originaux que de Parties.
 
 Chaque Partie fait précéder sa signature de la mention manuscrite « lu et approuvé ».
 
-| Nom | Lieu | Date | Signature |
-|---|---|---|---|
-| Léo Maurel | | | |
-| Paul Arbez | | | |
-| Eddy Gardes | | | |
+| Nom | Date | Signature |
+|---|---|---|
+| Léo Maurel | 05/11/2026 | lu et approuvé |
+| Paul Arbez | | |
+| Eddy Gardes | | |

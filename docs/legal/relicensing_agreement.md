@@ -83,8 +83,8 @@ Made in as many original copies as there are Parties.
 
 Each Party writes "lu et approuvé" ("read and approved") above their signature.
 
-| Name | Place | Date | Signature |
-|---|---|---|---|
-| Léo Maurel | | | |
-| Paul Arbez | | | |
-| Eddy Gardes | | | |
+| Name | Date | Signature |
+|---|---|---|
+| Léo Maurel | 05/11/2026 | lu et approuvé |
+| Paul Arbez | | |
+| Eddy Gardes | | |
