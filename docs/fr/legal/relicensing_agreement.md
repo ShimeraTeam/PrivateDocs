@@ -87,4 +87,4 @@ Chaque Partie fait précéder sa signature de la mention manuscrite « lu et app
 |---|---|---|
 | Léo Maurel | 05/11/2026 | lu et approuvé |
 | Paul Arbez | 06/11/2026 | lu et approuvé |
-| Eddy Gardes | | |
+| Eddy Gardes | 06/11/2026 | lu et approuvé |
