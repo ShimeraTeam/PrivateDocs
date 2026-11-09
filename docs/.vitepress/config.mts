@@ -1,0 +1,155 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  base: '/PrivateDocs/',
+  title: 'Shimera',
+  description: 'Documentation officielle multilingue',
+  locales: {
+    root: {
+      lang: 'en-US',
+      label: 'English',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/' }
+        ],
+        sidebar: {
+          '/': [
+            {
+              text: 'Deployment & Environment',
+              items: [
+                { text: 'Diffusion Strategy', link: '/deployment/diffusion_strategy'},
+                { text: 'Contribution Channels', link: '/deployment/contribution_channels' },
+                { text: 'Binary Types', link: '/deployment/binary' }
+              ]
+            },
+            {
+              text: 'Legal & Licensing',
+              items: [
+                { text: 'Legal Protection Strategy', link: '/legal/legal_protection_strategy' },
+                { text: 'Open Source Scope', link: '/legal/open_source_scope' },
+                { text: 'Re-licensing Agreement', link: '/legal/relicensing_agreement' }
+              ]
+            },
+            {
+              text: 'Library',
+              items: [
+                { text: 'Library Functionality', link: '/library/fonctionnement_lib' },
+                { text: 'Abstraction Layer', link: '/library/abstraction_layer' },
+                { text: 'Technology Comparative Briefs', link: '/library/technology_comparative_briefs' }
+              ]
+            },
+            {
+              text: 'Technology Watch',
+              items: [
+                { text: 'Technology Watch', link: '/technology_watch/technology_watch' }
+              ]
+            },
+            {
+              text: 'Report',
+              items: [
+                { text: 'Reproducibility Test', link: '/report/reproducibility_test' },
+                {
+                  text: 'POC',
+                  items: [
+                    { text: 'OpenGL Injection', link: '/report/poc/opengl_injection' },
+                    { text: 'Raylib', link: '/report/poc/raylib' },
+                    { text: 'Abstraction Layer: First Attempt', link: '/report/poc/old_abstraction_layer' }
+                  ]
+                }
+              ]
+            },
+            {
+              text: 'Quality & Testing',
+              items: [
+                { text: 'Git Hooks', link: '/quality/git_hooks' },
+                { text: 'Security Map', link: '/quality/security_map'},
+                { text: 'Branches', link: '/quality/branches' },
+                { text: 'Commits', link: '/quality/commits' }
+              ]
+            },
+            {
+              text: 'Annexes',
+              items: [
+                { text: 'Action Plan', link: '/annexes/plan-action' },
+                { text: 'Assets', link: '/annexes/assets' }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    fr: {
+      lang: 'fr',
+      label: 'French',
+      themeConfig: {
+        nav: [
+          { text: 'Accueil', link: '/fr/' }
+        ],
+        sidebar: {
+          '/fr/': [
+            {
+              text: 'Déploiement & Environnement',
+              items: [
+                { text: 'Stratégie de diffusion', link: '/fr/deployment/diffusion_strategy'},
+                { text: 'Canaux de contribution', link: '/fr/deployment/contribution_channels' },
+                { text: 'Types de binaires', link: '/fr/deployment/binary' }
+              ]
+            },
+            {
+              text: 'Juridique & Licence',
+              items: [
+                { text: 'Stratégie de protection juridique', link: '/fr/legal/legal_protection_strategy' },
+                { text: 'Périmètre open source', link: '/fr/legal/open_source_scope' },
+                { text: 'Accord de changement de licence', link: '/fr/legal/relicensing_agreement' }
+              ]
+            },
+            {
+              text: 'Librairie',
+              items: [
+                { text: 'Fonctionnement de la librairie', link: '/fr/library/fonctionnement_lib' },
+                { text: "Couche d'abstraction", link: '/fr/library/abstraction_layer' },
+                { text: 'Comparatifs technologiques', link: '/fr/library/technology_comparative_briefs' }
+              ]
+            },
+            {
+              text: 'Veille technologique',
+              items: [
+                { text: 'Veille technologique', link: '/fr/technology_watch/technology_watch' }
+              ]
+            },
+            {
+              text: 'Rapport',
+              items: [
+                { text: 'Test de reproductibilité', link: '/fr/report/reproducibility_test' },
+                {
+                  text: 'POC',
+                  items: [
+                    { text: 'Injection OpenGL', link: '/fr/report/poc/opengl_injection' },
+                    { text: 'Raylib', link: '/fr/report/poc/raylib' },
+                    { text: "Couche d'abstraction : Première tentative", link: '/fr/report/poc/old_abstraction_layer' }
+                  ]
+                }
+              ]
+            },
+            {
+              text: 'Qualité & Tests',
+              items: [
+                { text: 'Git Hooks', link: '/fr/quality/git_hooks' },
+                { text: 'Security Map', link: '/fr/quality/security_map'},
+                { text: 'Branches', link: '/fr/quality/branches' },
+                { text: 'Commits', link: '/fr/quality/commits' }
+              ]
+            },
+            {
+              text: 'Annexes',
+              items: [
+                { text: 'Plan d\'action', link: '/fr/annexes/plan-action' },
+                { text: 'Assests', link: '/fr/annexes/assets' }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+})
